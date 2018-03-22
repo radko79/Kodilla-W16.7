@@ -23,9 +23,18 @@ class App extends React.Component {
 		this.setState({data: remainder});
 	}
 	render() {
+		const list = this.state.data.map((item) => {
+			return (
+				<li key={item.id}>
+					<p>{item.text}</p>
+				</li>
+			)
+		});
 		return (
 			<div className={style.TodoApp}>
-				Tutaj pojawią się komponenty naszej aplikacji.
+				<Title title="TO DO"/>
+				<ul>{list}</ul>
+				<p>Liczba zadan dodanych do listy: {list.length}</p>
 			</div>
 		);
 	}

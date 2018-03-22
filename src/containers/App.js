@@ -2,6 +2,8 @@
 //log('hello world!');
 
 import React from 'react';
+import uuid from 'uuid';
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -15,7 +17,19 @@ class App extends React.Component {
 			id: uuid.v4(),
 		};
 		const data = [...this.state.data, todo];
-		this.setState({data});
+		this.setState({data}); // = { data: data }.
 	}
+	removeTodo(id) {
+		const remainder = this.state.data.filter(todo => todo.id !== id);
+		this.setState({data: remainder});
+	}
+	render() {
+		return (
+			<div className={style.TodoApp}>
+				Tutaj pojawią się komponenty naszej aplikacji.
+			</div>
+		);
+	}
+
 }
 export default App;

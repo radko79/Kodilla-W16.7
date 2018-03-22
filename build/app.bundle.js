@@ -7777,7 +7777,7 @@ module.exports = camelize;
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -7809,60 +7809,76 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var App = function (_React$Component) {
-	_inherits(App, _React$Component);
+    _inherits(App, _React$Component);
 
-	function App(props) {
-		_classCallCheck(this, App);
+    function App(props) {
+        _classCallCheck(this, App);
 
-		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-		_this.state = {
-			data: []
-		};
-		return _this;
-	}
+        _this.state = {
+            data: []
+        };
+        return _this;
+    }
 
-	_createClass(App, [{
-		key: 'addTodo',
-		value: function addTodo(val) {
-			var todo = {
-				text: val,
-				id: _uuid2.default.v4()
-			};
-			var data = [].concat(_toConsumableArray(this.state.data), [todo]);
-			this.setState({ data: data });
-		}
-	}, {
-		key: 'removeTodo',
-		value: function removeTodo(id) {
-			var remainder = this.state.data.filter(function (todo) {
-				return todo.id !== id;
-			});
-			this.setState({ data: remainder });
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'div',
-				{ className: _App2.default.TodoApp },
-				_react2.default.createElement(_Title2.default, { title: 'TODO !!!' }),
-				_react2.default.createElement(
-					'ul',
-					null,
-					list
-				),
-				_react2.default.createElement(
-					'p',
-					null,
-					'Liczba zada\u0144 dodanych do listy: ',
-					list.length
-				)
-			);
-		}
-	}]);
+    _createClass(App, [{
+        key: 'addTodo',
+        value: function addTodo(val) {
+            var todo = {
+                text: val,
+                id: _uuid2.default.v4()
+            };
+            var data = [].concat(_toConsumableArray(this.state.data), [todo]);
+            this.setState({
+                data: data
+            });
+        }
+    }, {
+        key: 'removeTodo',
+        value: function removeTodo(id) {
+            var remainder = this.state.data.filter(function (todo) {
+                return todo.id !== id;
+            });
+            this.setState({
+                data: remainder
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var list = this.state.data.map(function (item) {
+                return _react2.default.createElement(
+                    'li',
+                    { key: item.id },
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        item.text
+                    )
+                );
+            });
 
-	return App;
+            return _react2.default.createElement(
+                'div',
+                { className: _App2.default.TodoApp },
+                _react2.default.createElement(_Title2.default, { title: 'TODO !!!' }),
+                _react2.default.createElement(
+                    'ul',
+                    null,
+                    list
+                ),
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    'Liczba zada\u0144 dodanych do listy: ',
+                    list.length
+                )
+            );
+        }
+    }]);
+
+    return App;
 }(_react2.default.Component);
 
 exports.default = App;

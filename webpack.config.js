@@ -10,7 +10,7 @@ module.exports =  {
 		rules: [
 			{
 				test: /\.js$/,
-				loader: "babel-loader",
+				loader: "babel-loader"
 			},
 			{
 				test: /\.css$/,
@@ -19,7 +19,7 @@ module.exports =  {
 					{
 						loader: 'css-loader',
 						options: {
-							module: true
+							modules: true
 						}
 					}
 				]

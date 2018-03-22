@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports =  {
-	entry: './src/app.js',
+	entry: './src/index.js',
 	output: {
 		path: path.resolve(__dirname, 'build'),
 		filename: 'app.bundle.js'
@@ -10,7 +10,10 @@ module.exports =  {
 		rules: [
 			{
 				test: /\.js$/,
-				loader: "babel-loader"
+				loader: "babel-loader",
+				options: {
+					presets: ['es2015', 'react']
+				}
 			}
 		]
 	}

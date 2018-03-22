@@ -1,17 +1,15 @@
-//import log from './log.js';
-//log('hello world!');
-
 import React from 'react';
 import uuid from 'uuid';
 import style from './App.css';
+import Title from '../components/Title';
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			data: []
-		};
-	}
+    constructor(props){
+        super(props);
+        this.state = {
+            data: []
+        };
+    }
 	addTodo(val){
 		const todo = {
 			text: val,
@@ -31,6 +29,5 @@ class App extends React.Component {
 			</div>
 		);
 	}
-
 }
 export default App;

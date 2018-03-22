@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-DOM';
-import app from './containers/app';
+import App from './containers/App';
 
 ReactDOM.render (
 	<App/>,

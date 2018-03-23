@@ -1,4 +1,8 @@
-const path = require('path');
+const path = require('path'),
+	webpack = require('webpack'),
+	HtmlWebpackPlugin = require('html-webpack-plugin'),
+	UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
+	OptimizeJsPlugin = require('optimize-js-plugin');
 
 module.exports =  {
 	entry: './src/index.js',
@@ -25,5 +29,16 @@ module.exports =  {
 				]
 			}
 		]
-	}
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: 'src/index.html',
+			filename: 'index.html',
+			inject: 'body'
+		}),
+		new webpack.optimize.UglifyJsPlugin(),
+		new OptimizeJsPlugin({
+            sourceMap: false
+        });
+	]
 };

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');;
+
+.TodoList {
+    display: flex;
+    flex-direction: column;
+}
+.task {
+    color: #222;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+.task:hover {
+    background-color: #e67e22;
+    border-radius: 10px;
+}

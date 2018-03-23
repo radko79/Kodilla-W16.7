@@ -39,6 +39,6 @@ module.exports =  {
 		new webpack.optimize.UglifyJsPlugin(),
 		new OptimizeJsPlugin({
             sourceMap: false
-        });
+        })
 	]
 };

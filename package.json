@@ -1,12 +1,12 @@
 {
-  "name": "16.5",
+  "name": "16.7",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack",
-    "httpserver": "http-server"
+    "build": "NODE_ENV=production webpack",
+    "start": "webpack-dev-server --config ./webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +25,6 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
-    "http-server": "^0.11.1",
     "uuid": "^3.2.1"
   }
 }
